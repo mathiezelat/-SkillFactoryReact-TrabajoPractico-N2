@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom'
+
 const CharacterCard = ({ character }) => {
 	return (
-		<div
+		<Link
+			to={`/character/${character.id}`}
 			key={character.id}
-			className="rounded bg-violet-50/20 overflow-hidden shadow shadow-violet-500/20"
+			className="rounded bg-violet-50/20 overflow-hidden shadow shadow-violet-500/20 transform-gpu transition hover:shadow-xl hover:z-10 hover:scale-105"
 		>
 			<div className="flex gap-4">
 				<div className="basis-1/2 grow relative">
@@ -16,7 +19,9 @@ const CharacterCard = ({ character }) => {
 					/>
 				</div>
 				<div className="basis-1/2 shrink-0 grow-0 flex flex-col py-2">
-					<p className="text-2xl font-semibold">{character.name}</p>
+					<p className="text-2xl font-semibold opacity-90">
+						{character.name}
+					</p>
 					<p>
 						<span className="flex items-center gap-2">
 							<span className="relative flex w-3 h-3">
@@ -35,16 +40,20 @@ const CharacterCard = ({ character }) => {
 									} rounded-full inline-flex`}
 								></span>
 							</span>
-							{character.status} - {character.species}
+							<span className="opacity-90">
+								{character.status} - {character.species}
+							</span>
 						</span>
 					</p>
-					<p className="text-gray-800 text-sm">Gender</p>
-					<p className="text-lg">{character.gender}</p>
-					<p className="text-gray-800 text-sm">Origin</p>
-					<p className="text-lg">{character.origin.name}</p>
+					<p className="opacity-60 text-sm">Gender</p>
+					<p className="opacity-80 text-lg">{character.gender}</p>
+					<p className="opacity-60 text-sm">Origin</p>
+					<p className="opacity-80 text-lg">
+						{character.origin.name}
+					</p>
 				</div>
 			</div>
-		</div>
+		</Link>
 	)
 }
 

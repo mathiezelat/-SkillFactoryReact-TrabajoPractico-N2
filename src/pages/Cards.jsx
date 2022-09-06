@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import CharactersList from '../components/CharactersList'
+import CharactersList from '../components/CharacterList'
 
 const Cards = () => {
 	const [characters, setCharacters] = useState([])

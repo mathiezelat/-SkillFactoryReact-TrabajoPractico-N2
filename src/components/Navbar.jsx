@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = () => {
 	return (
-		<nav className="bg-cyan-500 border-b-4 border-lime-400 w-full z-10 py-2 h-24 fixed shadow">
+		<nav className="bg-cyan-500 border-b-4 border-lime-400 w-full z-20 py-2 h-24 fixed shadow">
 			<div className="max-w-6xl mx-auto h-full">
 				<div className="flex h-full items-center justify-between px-4">
 					<Link to="/" className="h-full">
