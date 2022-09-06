@@ -5,6 +5,7 @@
 - Formulario de contacto (nombre, correo electrónico, comentario)
 - Tabla de usuarios (nombre, id, email, teléfono, ciudad del usuario, nombre de la compañía donde trabaja)
 - Cards de Rick And Morty
+- Detail view de Rick And Morty
 
 ## APIs utilizadas
 - https://jsonplaceholder.typicode.com/users
