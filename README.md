@@ -38,7 +38,7 @@ Ejecuta la aplicación en modo desarollo.
 
 Abrir http://localhost:5173 para ver en el navegador.
 
-## dependencias
+## Dependencias
 
 ### Dependencias de producción
 
