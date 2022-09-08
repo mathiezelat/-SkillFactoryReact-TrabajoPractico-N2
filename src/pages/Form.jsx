@@ -1,23 +1,30 @@
 import { useState } from 'react'
 const Form = () => {
+	const [name, setName] = useState('')
+	const [email, setEmail] = useState('')
+	const [coment, setComent] = useState('')
 	const [data, setData] = useState({})
+
+	const resetForm = () => {
+		setName('')
+		setEmail('')
+		setComent('')
+	}
 
 	const handleSubmit = event => {
 		event.preventDefault()
 
-		const formData = new FormData(event.target)
-
 		const newContact = {
-			name: formData.get('name'),
-			email: formData.get('email'),
-			coment: formData.get('coment'),
+			name,
+			email,
+			coment,
 		}
+
+		resetForm()
 
 		console.log('Contacto', newContact)
 
 		setData(newContact)
-
-		event.target.reset()
 	}
 
 	return (
@@ -41,6 +48,8 @@ const Form = () => {
 								id="name"
 								required
 								className="text-white/80 bg-cyan-600 mt-1 block w-full border border-cyan-800 rounded-md pt-1 pb-2 px-2 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition"
+								value={name}
+								onChange={event => setName(event.target.value)}
 							/>
 						</div>
 						<div className="grid">
@@ -53,6 +62,8 @@ const Form = () => {
 								id="email"
 								required
 								className="text-white/80 bg-cyan-600 mt-1 block w-full border border-cyan-800 rounded-md pt-1 pb-2 px-2 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition"
+								value={email}
+								onChange={event => setEmail(event.target.value)}
 							/>
 						</div>
 						<div className="grid">
@@ -66,6 +77,10 @@ const Form = () => {
 								rows={3}
 								required
 								className="text-white/80 bg-cyan-600 mt-1 block w-full border border-cyan-800 rounded-md pt-1 pb-2 px-2 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition resize-none"
+								value={coment}
+								onChange={event =>
+									setComent(event.target.value)
+								}
 							/>
 						</div>
 						<input
