@@ -57,7 +57,7 @@ const Form = () => {
 								Correo electrónico
 							</label>
 							<input
-								type="text"
+								type="email"
 								name="email"
 								id="email"
 								required
